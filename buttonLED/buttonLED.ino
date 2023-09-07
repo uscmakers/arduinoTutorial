@@ -1,5 +1,5 @@
-const int BUTTON_PIN = 7;
-const int LED_PIN = 6;
+const int BUTTON_PIN = 2;
+const int LED_PIN = 3;
 bool buttonState;
 
 void setup() {
