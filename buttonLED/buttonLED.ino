@@ -2,14 +2,12 @@ const int buttonPin = 6;
 const int ledPin = 7;
 int buttonState = 0;
 
-void setup()
-{
+void setup() {
   pinMode(buttonPin, INPUT);
   pinMode(ledPin, OUTPUT);
 }
 
-void loop()
-{
+void loop() {
   buttonState = digitalRead(buttonPin);
 
   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
