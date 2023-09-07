@@ -1,21 +1,25 @@
-const int buttonPin = 6;
-const int ledPin = 7;
-int buttonState = 0;
+const int BUTTON_PIN = 7;
+const int LED_PIN = 6;
+bool buttonState;
 
 void setup() {
-  pinMode(buttonPin, INPUT);
-  pinMode(ledPin, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT);
+  pinMode(LED_PIN, OUTPUT);
+
+  Serial.begin(9600);
 }
 
 void loop() {
-  buttonState = digitalRead(buttonPin);
+  // Check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  buttonState = digitalRead(BUTTON_PIN);
+  // Print buttonState for troubleshooting assistance
+  Serial.println(String(buttonState));
 
-  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
   if (buttonState == HIGH) {
-    // turn LED on:
-    digitalWrite(ledPin, HIGH);
+    // Turn LED on if button is pressed
+    digitalWrite(LED_PIN, HIGH);
   } else {
-    // turn LED off:
-    digitalWrite(ledPin, LOW);
+    // Turn LED off if button is not pressed
+    digitalWrite(LED_PIN, LOW);
   }
 }
